@@ -33,8 +33,8 @@ Output: true  // case-insensitive
 // Your code goes here...
 function areAnagrams(str1, str2) {
     // Convert both strings to lowercase to make it case-insensitive
-    str1 = str1.toLowerCase();
-    str2 = str2.toLowerCase();
+    str1 = str1.toLowerCase().repalceAll(" ", "");
+    str2 = str2.toLowerCase().repalceAll(" ", "");
 
     // Quick check: if lengths differ, they cannot be anagrams
     if (str1.length !== str2.length) return false;
