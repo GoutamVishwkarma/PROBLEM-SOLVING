@@ -1,0 +1,20 @@
+function insertAnElement(arr, pos, ele) {
+    // Input validation
+    if (pos < 0 || pos > arr.length) {
+        return "Invalid position";
+    }
+    
+    // Increase array length by 1
+    arr.length = arr.length + 1;
+    
+    // Shift elements to the right from the end to pos
+    for (let i = arr.length - 1; i > pos; i--) {
+        arr[i] = arr[i - 1];
+    }
+    
+    // Insert element at position
+    arr[pos] = ele;
+    return arr;
+}
+
+console.log(insertAnElement([1, 2, 4, 5], 2, 3)); // Output: [1, 2, 3, 4, 5]
