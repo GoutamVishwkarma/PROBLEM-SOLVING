@@ -1,0 +1,17 @@
+function invertValuesFromObject(obj) {
+    if (typeof obj !== 'object' || obj === null) return "Invalid input";
+    
+    let result = {};
+    for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            if (result[obj[key]]) return "Error: Duplicate values";
+            result[obj[key]] = key;
+        }
+    }
+    
+    return result;
+}
+
+console.log(invertValuesFromObject({a: 1, b: 2})); // Output: { '1': 'a', '2': 'b' }
+console.log(invertValuesFromObject({a: 1, b: 1})); // Output: "Error: Duplicate values"
+console.log(invertValuesFromObject("not an object")); // Output: "Invalid input"
