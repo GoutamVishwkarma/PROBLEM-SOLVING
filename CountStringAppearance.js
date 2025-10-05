@@ -1,3 +1,6 @@
+//Count how many times a substring appears in a string
+//     - Return how many times a smaller string appears in a larger one.
+
 function countStringAppearance(str, subString) {
   let count = 0;
 
