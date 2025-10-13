@@ -1,0 +1,28 @@
+// **Implement Insertion Sort**
+//   - Build sorted array by inserting elements in correct position.
+//   - Time: O(n²) | Space: O(1)
+//   - Why: Good for small or nearly sorted data. 
+
+
+// Insertion Sort: builds sorted array by inserting elements in correct position
+function insertionSort(arr) {
+    let temp, j;
+    
+    for (let i = 1; i < arr.length; i++) {  // ✅ Increment i, not j
+        temp = arr[i];
+        j = i - 1;
+        while (j >= 0 && temp < arr[j]) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = temp;
+    }
+    
+    return arr;
+}
+
+const arr = [2, 1, 4, 3, 5];
+console.log(insertionSort(arr)); // [1, 2, 3, 4, 5]
+
+
+
